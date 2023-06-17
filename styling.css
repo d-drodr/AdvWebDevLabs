@@ -1,13 +1,18 @@
+body{
+    background: linear-gradient(120deg, #f6d365, #fda085);
+}
 ul.navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    display: flex;
+    justify-content: center;
 }
 
 ul.navbar li {
-    float: left;
+    display: inline-block;
 }
 
 ul.navbar li a {
@@ -19,5 +24,64 @@ ul.navbar li a {
 }
 
 ul.navbar li a:hover {
-    background-color: #111;
+    background-color: blue;
+}
+
+
+
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.profile-container-mid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.profile-picture-mid {
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    margin-bottom: 20px;
+}
+.text-box {
+    width: 400px;
+    height: 150px;
+    padding: 10px;
+    background-color: none;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+p {
+    font-style: italic;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 10px;
 }
