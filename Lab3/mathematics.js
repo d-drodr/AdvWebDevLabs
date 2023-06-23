@@ -12,7 +12,7 @@ function addToInput(value){
 function calculate(){
     var input = document.getElementById('input').value;
     var result = eval(input);
-    document.getElementById('result').innerHTML = "Result: " + result;
+    document.getElementById('result').innerHTML =  result;
 }
 function clearAll(){
     document.getElementById('input').value = '';

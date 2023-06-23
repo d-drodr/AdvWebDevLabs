@@ -1,33 +1,117 @@
+body, html {
+    /*
+    fills entire page
+    */
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
 body{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background: linear-gradient(45deg,#e98888, #9198e5);
-    background-size: 100%;
+    background: linear-gradient(#6060d7, #3b0082);
+    background-attachment: fixed;
+
     text-align:center;
+   
+    
+    
 }
 
-h2 {
-    color: black;
-}
-.container{
-    /* container to store calculator buttons*/
-    margin-top:200px;
+
+h1 {
+    font-size: 72px;
+    background: -webkit-linear-gradient(#8ab508, #31d0ad);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color:transparent;
 }
 .input{
-    padding: 10px;
+    /*
+    styling for the user input box
+    */
+    padding: 20px;
     font-size: 18px;
-    border:none;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0,1);
+    border:solid;
+    border-radius: 15px;
     text-align: center;
     margin-bottom: 10px;
-    grid-column: span 4;
+    grid-column: span 3;
+    background-color: #181c41;
+    color: white;
+}
+.calculator p{
+    /*
+    styling for the answer output box
+    */
+     padding: 20px;
+    font-size: 15px;
+    border:solid;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 1px;
+    
+    /* text-align: center;
+    
+    grid-column: span 1;
+    background-color: #181c41;
+    color: white;  */
+    background-color: #181c41;
+    border-color:white;
+    grid-row-start: 1;
+    grid-row-end:1;
+    grid-column-start: 4;
+    grid-column-end: 4;
+    color:white;
+    
 }
 
 .calculator{
+    /*
+    styling for button layout
+    4 column grid
+    with each cell same size
+    */
     display:grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     grid-gap:20px;
-    max-width:300px;
+    max-width:350px;
     margin:auto ;
+}
+.calculator button{
+    /*
+    sets button styling
+    */
+    font-size: medium;
+    padding:20px;
+    border: solid;
+    /* border-color: red; */
+    border-radius: 15px;
+    background-color: #181c41;
+    color:white;
+    cursor: pointer;
+}
+.calculator button:hover{
+    background-color: rgb(129, 129, 48);
+}
+.calculator button.equals{
+    /*
+    styling for equals sign to fit the length of the row
+
+    */
+    padding:20px;
+    border: solid;
+    border-color: red;
+    border-radius: 15px;
+    background-color: #181c41;
+    color:white;
+    cursor: pointer;
+    grid-column: span 4;
+}
+.calculator button.operators{
+    /*
+    styling for operators
+    *,-,+,/,etc.
+    */
+    border-color: red;
+    font-size: 18px;
 }
 

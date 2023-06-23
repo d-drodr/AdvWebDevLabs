@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 
 <html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styling.css">
     <script src="mathematics.js"></script>
-    <title>Simple Calc</title>
     <body>
+    <title>Simple Calc</title>
+   
 
-
+    <h1>EZ Calc</h1>
         <div class="container">
 
         
-        <h1>EZ Calc</h1>
+       
         <div class="calculator">
 
         
-        <p id="result"></p>
+        
 <!--User Input box-->
-        <input type="text" id="input" class="input" placeholder="Enter an expression">
+        
+
+<input type="text" id="input" class="input" placeholder="Expression">
+<p class="answer" id="result"></p>
 <!-- Buttons for functions-->
     
 <!-- button layout on a 4 row x 5 cols grid
@@ -25,26 +30,26 @@
         <button onclick="addToInput('7')">7</button>
         <button onclick="addToInput('8')">8</button>
         <button onclick="addToInput('9')">9</button>
-        <button  onclick="addToInput('*')">*</button>
+        <button class="operators" onclick="addToInput('*')">*</button>
 
                     
          <button onclick="addToInput('4')">4</button>
          <button onclick="addToInput('5')">5</button>
         <button onclick="addToInput('6')">6</button>
-        <button  onclick="addToInput('/')">/</button>
+        <button class="operators" onclick="addToInput('/')">/</button>
 
          <button onclick="addToInput('1')">1</button>
         <button onclick="addToInput('2')">2</button>
          <button onclick="addToInput('3')">3</button>
-         <button  onclick="addToInput('-')">-</button>
+         <button class="operators" onclick="addToInput('-')">-</button>
 
                     
         <button onclick="addToInput('.')">.</button>
         <button  onclick="addToInput('0')">0</button>
         <button onclick="clearAll()">C</button>
-        <button  onclick="addToInput('+')">+</button>
+        <button class="operators" onclick="addToInput('+')">+</button>
 
-        <button onclick="calculate()">=</button>
+        <button class="equals" onclick="calculate()">=</button>
     </div>
     </div>
     </body>
