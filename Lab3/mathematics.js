@@ -18,3 +18,7 @@ function clearAll(){
     document.getElementById('input').value = '';
     document.getElementById('result').innerHTML= '';
 }
+function toggleScientific() {
+    var scientificButtons = document.querySelector('.scientific-buttons');
+    scientificButtons.classList.toggle('active');
+}
