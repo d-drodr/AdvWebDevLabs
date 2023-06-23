@@ -1,32 +1,51 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="styling.css">
-<script src="mathematics.js"></script>
+
 <html>
+    <link rel="stylesheet" href="styling.css">
+    <script src="mathematics.js"></script>
     <title>Simple Calc</title>
     <body>
 
-        <h2>EZ Calc</h2>
+
+        <div class="container">
+
+        
+        <h1>EZ Calc</h1>
+        <div class="calculator">
+
+        
+        <p id="result"></p>
+<!--User Input box-->
+        <input type="text" id="input" class="input" placeholder="Enter an expression">
 <!-- Buttons for functions-->
-        <button  onclick="addToInput('*')">*</button>
-        <button  onclick="addToInput('/')">/</button>
-        <button  onclick="addToInput('-')">-</button>
-        <button  onclick="addToInput('+')">+</button>
-<!-- Number buttons in groups of 3-->
+    
+<!-- button layout on a 4 row x 5 cols grid
+    with equal sign at bottom
+-->
         <button onclick="addToInput('7')">7</button>
         <button onclick="addToInput('8')">8</button>
         <button onclick="addToInput('9')">9</button>
+        <button  onclick="addToInput('*')">*</button>
+
                     
          <button onclick="addToInput('4')">4</button>
          <button onclick="addToInput('5')">5</button>
         <button onclick="addToInput('6')">6</button>
+        <button  onclick="addToInput('/')">/</button>
 
          <button onclick="addToInput('1')">1</button>
         <button onclick="addToInput('2')">2</button>
          <button onclick="addToInput('3')">3</button>
+         <button  onclick="addToInput('-')">-</button>
+
                     
         <button onclick="addToInput('.')">.</button>
         <button  onclick="addToInput('0')">0</button>
-        <button onclick="clearInput()">C</button>
+        <button onclick="clearAll()">C</button>
+        <button  onclick="addToInput('+')">+</button>
 
+        <button onclick="calculate()">=</button>
+    </div>
+    </div>
     </body>
 </html>
