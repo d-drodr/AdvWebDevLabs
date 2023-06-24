@@ -107,6 +107,9 @@ h1 {
     cursor: pointer;
     grid-column: span 4;
 }
+.calculator button.equals:hover {
+    background-color: rgb(15, 236, 125);
+  }
 .calculator button.operators{
     /*
     styling for operators
