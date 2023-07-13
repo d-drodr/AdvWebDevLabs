@@ -4,13 +4,14 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def index():
-   if request.method == 'POST':
+    if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
         meets_requirements = check_password_requirements(password)
 
-        return redirect(url_for('report', username=username, meets_requirements=meets_requirements))
-   return render_template('index.html')
+        return redirect(url_for('report', username=username, meets_requirements=str(meets_requirements)))
+
+    return render_template('index.html')
 
 # @app.route('/base')
 # def base():

@@ -7,7 +7,7 @@
     <h1>Password Requirements Report</h1>
     <p>Username: {{ username }}</p>
     
-    {% if meets_requirements %}
+    {% if meets_requirements == 'True' %}
         <p>The password meets the requirements.</p>
     {% else %}
         <p>The password does not meet the requirements.</p>
