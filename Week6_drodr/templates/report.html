@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Requirements Report</title>
+</head>
+<body>
+    <h1>Password Requirements Report</h1>
+    <p>Username: {{ username }}</p>
+    
+    {% if meets_requirements %}
+        <p>The password meets the requirements.</p>
+    {% else %}
+        <p>The password does not meet the requirements.</p>
+    {% endif %}
+</body>
+</html>
