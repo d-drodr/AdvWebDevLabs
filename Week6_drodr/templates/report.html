@@ -3,14 +3,16 @@
 <head>
     <title>Password Requirements Report</title>
 </head>
-<body>
+<body style="background-color: bisque;">
+    <center>
     <h1>Password Requirements Report</h1>
     <p>Username: {{ username }}</p>
     
     {% if meets_requirements == 'True' %}
-        <p>The password meets the requirements.</p>
+        <p style="color: rgb(49, 204, 57);font-size:x-large;font-weight: bolder;">The password meets the requirements.</p>
     {% else %}
-        <p>The password does not meet the requirements.</p>
+        <p style="color: red;font-size:larger;">The password does not meet the requirements.</p>
     {% endif %}
+</center>
 </body>
 </html>

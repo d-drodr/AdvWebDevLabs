@@ -2,18 +2,43 @@
 <html>
 <head>
     <title>Password Requirements Check</title>
+    <style>
+        ul {
+            list-style-position: inside;
+            padding-left: 0;
+            text-align: left; 
+            display: inline-block; 
+        }
+
+        li {
+            margin-left: 20px;
+        }
+
+        .center {
+            text-align: center; 
+        }
+    </style>
 </head>
-<body>
-    <h1>Enter your username and password</h1>
+<body style="background-color: bisque;">
+    <div class="center">
+        <h1>Enter a username and password</h1>
 
-    <form action="{{ url_for('index') }}" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <form action="{{ url_for('index') }}" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Submit">
+            <p style="font-size: small;">Password must include:</p>
+            <ul>
+                <li style="font-size: small;">At least 8 characters</li>
+                <li style="font-size: small;">One uppercase and one lowercase letter</li>
+                <li style="font-size: small;">Must end in a number</li>
+            </ul>
 
-        <input type="submit" value="Submit">
-    </form>
+            
+        </form>
+    </div>
 </body>
 </html>
