@@ -20,3 +20,6 @@ It is simple, but can be adjusted as I will further implement more functions suc
 - limit result display length
 - automatically add a closing parenthesis
 - error handing for non-numeric characters
+
+IMPORTANT NOTE FOR SCIENTIFIC FUNCTION USAGE:
+when using the sqrt or the trigonometry functions, you press the function, type in the number, then add a closing parenthesis.
