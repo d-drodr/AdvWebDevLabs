@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/styling.css') }}"> -->
+    <link rel="stylesheet" href="C:\Users\dexte\Documents\CS421\AdvWebDevLabs\Lab7\static\styles\styling.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Home Page</h1>
+        <form action="/login" method="post" >
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <input type="submit" value="Login">
+            <a href="/signup">First Time? Signup</a>
+        </form>
+        
+    </div>
+</body>
+</html>
