@@ -1,0 +1,78 @@
+/* styles.css */
+
+/* Example styles for the coffee shop application */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .menu-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .menu-item .name {
+    font-weight: bold;
+  }
+  
+  .menu-item .price {
+    margin-left: auto;
+  }
+  
+  .cart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .cart-item .name {
+    font-weight: bold;
+  }
+  
+  .cart-item .quantity {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  
+  .cart-item .price {
+    margin-left: auto;
+  }
+  
+  .total-price {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  

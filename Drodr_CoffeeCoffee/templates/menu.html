@@ -1,0 +1,54 @@
+<!-- menu.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Menu</h2>
+
+  {% for category in menu_data %}
+    <h3>{{ category['name'] }}</h3>
+
+    <ul>
+      {% for item in category['items'] %}
+        <li>
+          <span>{{ item['name'] }}</span>
+          <span>${{ item['price'] }}</span>
+          <button onclick="addToCart('{{ item['id'] }}', '{{ item['name'] }}', '{{ item['price'] }}')">Add to Cart</button>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+
+  <script>
+    function addToCart(itemId, itemName, itemPrice) {
+      // Create the request payload
+      var data = {
+        item_id: itemId,
+        item_quantity: 1  // You can modify this value to allow selecting quantity
+      };
+
+      // Send an AJAX POST request to the server
+      fetch('/add_to_cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        if (response.ok) {
+          // Cart updated successfully
+          alert('Item added to cart');
+        } else {
+          // Error handling
+          alert('Failed to add item to cart');
+        }
+      })
+      .catch(error => {
+        // Error handling
+        console.error('Error:', error);
+        alert('An error occurred');
+      });
+    }
+  </script>
+{% endblock %}

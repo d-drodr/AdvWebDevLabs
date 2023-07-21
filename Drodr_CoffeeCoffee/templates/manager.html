@@ -1,0 +1,28 @@
+<!-- manager.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Manager Dashboard</h2>
+
+  <h3>Menu Management</h3>
+
+  <form action="{{ url_for('add_item') }}" method="POST">
+    <label for="item_name">Item Name:</label>
+    <input type="text" id="item_name" name="item_name" required><br><br>
+
+    <label for="item_price">Item Price:</label>
+    <input type="number" id="item_price" name="item_price" step="0.01" min="0" required><br><br>
+
+    <input type="submit" value="Add Item">
+  </form>
+
+  <h3>Order Management</h3>
+
+  <h4>Customer Orders:</h4>
+  <ul>
+    {% for order in orders %}
+      <li>{{ order }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+  <header>
+    <h1>Coffee Shop</h1>
+    <nav>
+      <ul>
+        <li><a href="{{ url_for('index') }}">Home</a></li>
+        <li><a href="{{ url_for('menu') }}">Menu</a></li>
+        <li><a href="{{ url_for('show_cart') }}">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Coffee Shop</p>
+  </footer>
+</body>
+</html>

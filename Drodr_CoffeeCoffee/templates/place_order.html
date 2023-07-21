@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Place Order</h2>
+  
+  <form action="{{ url_for('place_order') }}" method="POST">
+    <div>
+      <label for="customer_name">Name:</label>
+      <input type="text" id="customer_name" name="customer_name" required>
+    </div>
+    <div>
+      <label for="customer_address">Address:</label>
+      <textarea id="customer_address" name="customer_address" required></textarea>
+    </div>
+    <button type="submit">Submit Order</button>
+  </form>
+{% endblock %}
