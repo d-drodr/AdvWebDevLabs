@@ -25,10 +25,12 @@ def login():
     username = request.form['username']
     password = request.form['password']
     user = User.query.filter_by(username=username, password=password).first()
+
     if user:
         return render_template('confirmation.html', username=username)
     else:
-        return redirect('/')
+        error = "Invalid credentials. Please check your username and password."
+        return render_template('home.html', error=error)
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -37,6 +39,13 @@ def signup():
         username = request.form['username']
         password = request.form['password']
 
+        # Check if the username is already taken
+        existing_user = User.query.filter_by(username=username).first()
+        if existing_user:
+            # If the username is taken, return to the signup page and pass the form data back
+            form_data = {'name': name, 'password': password}
+            return render_template('signup.html', error='Username already taken. Please choose a different username.', form_data=form_data)
+
         # Create a new user and add it to the database
         new_user = User(name=name, username=username, password=password)
         db.session.add(new_user)
@@ -44,7 +53,13 @@ def signup():
 
         return render_template('thankyou.html', username=username)
     else:
-        return render_template('signup.html')
+        # If handling a GET request, pass an empty dictionary as form_data
+        return render_template('signup.html', form_data={})
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run()
 
 if __name__ == '__main__':
     with app.app_context():

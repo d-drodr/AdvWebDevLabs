@@ -2,13 +2,16 @@
 <html>
 <head>
     <title>Home</title>
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/styling.css') }}"> -->
-    <link rel="stylesheet" href="C:\Users\dexte\Documents\CS421\AdvWebDevLabs\Lab7\static\styles\styling.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styling.css') }}">
+    <!-- <link rel="stylesheet" href="C:\Users\dexte\Documents\CS421\AdvWebDevLabs\Lab7\static\styles\styling.css"> -->
 
 </head>
 <body>
     <div class="container">
         <h1>Welcome to the Home Page</h1>
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
         <form action="/login" method="post" >
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br>

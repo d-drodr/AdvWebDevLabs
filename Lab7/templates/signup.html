@@ -3,17 +3,24 @@
 <head>
     <title>Signup</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styling.css') }}">
+    <!-- <link rel="stylesheet" href="C:\Users\dexte\Documents\CS421\AdvWebDevLabs\Lab7\static\styles\styling.css"> -->
+
 </head>
 <body>
     <h1>Create an Account</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <div class="container">
     <form action="/signup" method="post">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required><br>
+        <input type="text" id="name" name="name" required value="{{ form_data.get('name', '') }}"><br>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required><br>
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required><br>
-        <input type="submit" value="Sign Up">
+        <input type="password" id="password" name="password" required value="{{ form_data.get('password', '') }}"><br>
+        <input type="submit" value="Create Account">
     </form>
+</div>
 </body>
 </html>
