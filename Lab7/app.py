@@ -12,7 +12,9 @@ db = SQLAlchemy(app)
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
+    last_name = db.Column(db.String(100), nullable=False)
     username = db.Column(db.String(50), unique=True, nullable=False)
+    email = db.Column(db.String(100), unique=True, nullable=False) 
     password = db.Column(db.String(100), nullable=False)
 
 @app.route('/')
@@ -36,18 +38,22 @@ def login():
 def signup():
     if request.method == 'POST':
         name = request.form['name']
+        last_name = request.form['last_name']  
         username = request.form['username']
+        email = request.form['email']  
         password = request.form['password']
 
-        # Check if the username is already taken
-        existing_user = User.query.filter_by(username=username).first()
+        # Check if the email is already taken
+        existing_user = User.query.filter(
+            (User.username == username) | (User.email == email)
+        ).first()
         if existing_user:
-            # If the username is taken, return to the signup page and pass the form data back
-            form_data = {'name': name, 'password': password}
-            return render_template('signup.html', error='Username already taken. Please choose a different username.', form_data=form_data)
+            # If the username or email is taken, return to the signup page and pass the form data back
+            form_data = {'name': name, 'last_name': last_name, 'email': email, 'password': password}
+            return render_template('signup.html', error='Username or email already taken. Please choose different credentials.', form_data=form_data)
 
-        # Create a new user and add it to the database
-        new_user = User(name=name, username=username, password=password)
+        # Creates a new user and add it to the database
+        new_user = User(name=name, last_name=last_name, username=username, email=email, password=password)
         db.session.add(new_user)
         db.session.commit()
 
