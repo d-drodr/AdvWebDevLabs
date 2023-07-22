@@ -1,61 +1,107 @@
-
-
-
 body {
-    background-color:bisque;
+    background-image: linear-gradient(to bottom right, #245a91, #8ac6d1);
+    font-family: Arial, sans-serif;
     text-align: center;
-    align-items: center;
-   
+    padding-top: 5px;
+    margin: 0;
+    height: 100vh;
 }
 
 .container {
+    /* 
+        container field styling for login & signup page
+        set items to column 
+        max height to fill height of viewport
+    */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100hv;
+    
+    
 }
 
-.h1{
-    align-items: center;
+h3 {
+    color: #fff;
 }
 
 form {
-    
+    /* 
+        form container in column direction to make items stacked
+        gap is space between fields
+
+    */
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: auto;
+    gap: 15px;
+    max-width: 500px;
     padding: 50px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form-row {
+    /* 
+        styling for the label text and input boxes on the signup page to 
+        have them in 2 columns side-by-side
+    */
+    display: flex;
+    flex-wrap:nowrap;
+    justify-content: space-between;
+    width: 100;
 }
 
-
+.form-row label,
+.form-row input {
+    /* 
+        styling for signup page to make label text align and set box sizes
+    */
+    text-align:center;
+    width: calc(50% - 10px);
+    max-width: 240px;
+}
 form label,
 form input {
-    text-align: center;
+    /*  label and input fields for all pages
+        displayed in blocks and standard width 
+    */
     display: block;
-    margin-bottom: 0 auto;
+    width: 100%;
+    max-width: 300px;
 }
 
 form input {
-    margin: 0 auto;
-    width: 75%;
+    /* 
+        the user input field, set to white 
+    */
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 5px;
 }
-
 
 form input[type="submit"] {
+    /* submit button with color blue  */
     background-color: #007BFF;
+    width: 100px;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
-form a {
-    margin-top: 20px; /* Add spacing between the form elements and the <a> tag */
+
+form input[type="submit"]:hover {
     
+    background-color: #0056b3;
+}
+
+form a {
+    margin-top: 5px;
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 14px;
+}
+
+form a:hover {
+    text-decoration:none;
 }
